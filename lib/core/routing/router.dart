@@ -6,6 +6,8 @@ import 'package:ayol_uchun/features/auth/presentation/pages/sign_up/otp.dart';
 import 'package:ayol_uchun/features/auth/presentation/pages/sign_up/passwords_view.dart';
 import 'package:ayol_uchun/features/auth/presentation/pages/sign_up/phone_number_view.dart';
 import 'package:ayol_uchun/features/auth/presentation/pages/sign_up/sign_up_view.dart';
+import 'package:ayol_uchun/features/courses/presentation/manager/courses_bloc.dart';
+import 'package:ayol_uchun/features/courses/presentation/pages/courses_view.dart';
 import 'package:ayol_uchun/features/home/presentation/manager/home_bloc.dart';
 import 'package:ayol_uchun/features/home/presentation/pages/home_view.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -16,7 +18,7 @@ import '../../main.dart';
 
 final GoRouter router = GoRouter(
   navigatorKey: navigatorKey,
-  initialLocation: Routes.home,
+  initialLocation: Routes.login,
   routes: [
     GoRoute(
       path: Routes.login,
@@ -56,5 +58,12 @@ final GoRouter router = GoRouter(
         child: HomeView(),
       ),
     ),
+    GoRoute(
+      path: Routes.courses,
+      builder: (context, state) =>
+          BlocProvider(create: (context) =>
+              CoursesBloc(
+                courseRepo: context.read(), categoryRepo: context.read(),),
+            child: CoursesView(),),)
   ],
 );

@@ -8,11 +8,13 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
     super.key,
     required this.action,
     this.leadingIcon,
-    required this.leadingTitle,
+    required this.leadingTitle, required this.actionOnTap,
   });
 
   final String leadingTitle, action;
   final String? leadingIcon;
+
+  final VoidCallback actionOnTap;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +30,7 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
         surfaceTintColor: Colors.transparent,
         backgroundColor: AppColors.primary,
         leadingWidth: 300.w,
-        toolbarHeight: 90.h,
+        toolbarHeight: 85.h,
         leading: Row(
           spacing: 5,
           children: [
@@ -45,7 +47,7 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
             ),
             if (leadingIcon != null)
               SvgPicture.asset(
-                "assets/icons/$action",
+                "assets/icons/$leadingIcon",
                 fit: BoxFit.cover,
                 width: 30.w,
                 height: 30.h,
@@ -53,16 +55,16 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
           ],
         ),
         actions: [
-          SvgPicture.asset(
+        IconButton(onPressed: actionOnTap, icon:   SvgPicture.asset(
           "assets/icons/$action",
           fit: BoxFit.cover,
           width: 30.w,
           height: 30.h,
-        ),],
+        ),)],
       ),
     );
   }
 
   @override
-  Size get preferredSize => Size(double.infinity, 90.h);
+  Size get preferredSize => Size(double.infinity, 85.h);
 }

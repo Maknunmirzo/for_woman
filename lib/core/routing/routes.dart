@@ -7,4 +7,6 @@ class Routes {
   static const otp = "/otp";
   static const passwords = "/passwords";
 
+  static const courses="/courses";
+
 }

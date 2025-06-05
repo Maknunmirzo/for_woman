@@ -1,7 +1,7 @@
 import 'package:ayol_uchun/features/home/presentation/manager/home_bloc.dart';
 import 'package:ayol_uchun/features/home/presentation/manager/home_state.dart';
-import 'package:ayol_uchun/features/home/presentation/widgets/course_widget.dart';
-import 'package:ayol_uchun/features/home/presentation/widgets/course_widget_shimmer.dart';
+import 'package:ayol_uchun/features/home/presentation/widgets/home_course_widget.dart';
+import 'package:ayol_uchun/features/home/presentation/widgets/home_course_widget_shimmer.dart';
 import 'package:ayol_uchun/features/home/presentation/widgets/home_added_course.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,8 +9,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/utils/colors.dart';
 
-class Courses extends StatelessWidget {
-  const Courses({super.key});
+class HomeCourses extends StatelessWidget {
+  const HomeCourses({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,7 @@ class Courses extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 20.w),
                 scrollDirection: Axis.horizontal,
                 itemCount: 4,
-                itemBuilder: (context, index) => CourseWidgetShimmer(),
+                itemBuilder: (context, index) => HomeCourseWidgetShimmer(),
                 separatorBuilder: (context, index) => SizedBox(width: 20.w),
               )
                   : (state.courses.isEmpty)
@@ -53,14 +53,13 @@ class Courses extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 itemCount: state.courses.length,
                 itemBuilder: (context, index) =>
-                    CourseWidget(course: state.courses[index]),
+                    HomeCourseWidget(course: state.courses[index]),
                 separatorBuilder: (context, index) =>
                     SizedBox(width: 20.w),
               );
             },
           ),
         )
-
       ],
     );
   }

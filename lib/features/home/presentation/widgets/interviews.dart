@@ -1,6 +1,6 @@
 import 'package:ayol_uchun/features/home/presentation/manager/home_bloc.dart';
 import 'package:ayol_uchun/features/home/presentation/manager/home_state.dart';
-import 'package:ayol_uchun/features/home/presentation/widgets/course_widget_shimmer.dart';
+import 'package:ayol_uchun/features/home/presentation/widgets/home_course_widget_shimmer.dart';
 import 'package:ayol_uchun/features/home/presentation/widgets/interview_shimmer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

@@ -4,13 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../../core/utils/colors.dart';
 
 
 
 
-class CourseWidget extends StatelessWidget {
-  const CourseWidget({super.key, required this.course});
+
+class HomeCourseWidget extends StatelessWidget {
+  const HomeCourseWidget({super.key, required this.course});
 
   final CourseModel course;
   @override

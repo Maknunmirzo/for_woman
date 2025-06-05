@@ -7,8 +7,8 @@ import 'package:shimmer/shimmer.dart';
 
 
 
-class CourseWidgetShimmer extends StatelessWidget {
-  const CourseWidgetShimmer({super.key});
+class HomeCourseWidgetShimmer extends StatelessWidget {
+  const HomeCourseWidgetShimmer({super.key});
 
   @override
   Widget build(BuildContext context) {
